@@ -5,8 +5,8 @@
 }
 
 body {
-    font-family: 'Courier New', monospace;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%, #0a0a0a 100%);
     color: #ffffff;
     min-height: 100vh;
     overflow-x: hidden;
@@ -14,7 +14,7 @@ body {
     line-height: 1.6;
 }
 
-/* Animated background particles */
+/* Static background with subtle greyish accents */
 body::before {
     content: '';
     position: fixed;
@@ -23,10 +23,11 @@ body::before {
     width: 100%;
     height: 100%;
     background-image: 
-        radial-gradient(circle at 20% 20%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(255, 0, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 40% 60%, rgba(0, 255, 127, 0.1) 0%, transparent 50%);
-    animation: float 10s ease-in-out infinite;
+        radial-gradient(circle at 15% 15%, rgba(128, 128, 128, 0.08) 0%, transparent 30%),
+        radial-gradient(circle at 85% 85%, rgba(96, 96, 96, 0.06) 0%, transparent 35%),
+        radial-gradient(circle at 50% 20%, rgba(64, 64, 64, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 30% 80%, rgba(112, 112, 112, 0.04) 0%, transparent 45%),
+        radial-gradient(circle at 70% 60%, rgba(80, 80, 80, 0.05) 0%, transparent 50%);
     pointer-events: none;
     z-index: -1;
 }
@@ -44,33 +45,44 @@ pre {
     position: relative;
     z-index: 1;
     white-space: pre-wrap;
-    font-family: inherit;
+    font-family: 'Courier New', monospace;
 }
 
-/* Main title styling */
+/* Main title styling - single color, minimalistic */
 h1 {
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    font-weight: 700;
     font-size: 3rem;
-    background: linear-gradient(45deg, #00ffff, #ff00ff, #00ff7f);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+    color: #00ffff;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
     margin-bottom: 20px;
-    animation: glow 2s ease-in-out infinite alternate;
     text-align: center;
     display: block;
+    letter-spacing: -1px;
 }
 
 @keyframes glow {
-    from { filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.5)); }
-    to { filter: drop-shadow(0 0 30px rgba(255, 0, 255, 0.8)); }
+    from { text-shadow: 0 0 20px rgba(0, 255, 255, 0.4); }
+    to { text-shadow: 0 0 25px rgba(0, 255, 255, 0.6); }
 }
 
-/* Subtitle styling */
+/* Enhanced h2 styling */
+h2 {
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #e0e0e0;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Subtitle styling with minimal backdrop */
 h3 {
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    font-weight: 400;
     backdrop-filter: blur(15px);
     background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(0, 255, 255, 0.3);
+    border: 1px solid rgba(128, 128, 128, 0.3);
     border-radius: 15px;
     padding: 25px;
     margin: 20px 0;
@@ -81,6 +93,7 @@ h3 {
     overflow: hidden;
     font-size: 1rem;
     line-height: 1.8;
+    color: #f0f0f0;
 }
 
 h3::before {
@@ -99,14 +112,15 @@ h3::before {
     100% { left: 100%; }
 }
 
-/* Enhanced button styling */
+/* Simple button styling */
 button {
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    font-weight: 600;
     background: linear-gradient(45deg, #00ffff, #0080ff);
     color: #000;
     border: none;
     padding: 15px 40px;
     font-size: 1.2rem;
-    font-weight: bold;
     border-radius: 50px;
     cursor: pointer;
     margin: 30px auto;
@@ -116,7 +130,6 @@ button {
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-family: inherit;
     box-shadow: 
         0 0 20px rgba(0, 255, 255, 0.3),
         0 5px 15px rgba(0, 0, 0, 0.2);
@@ -149,8 +162,21 @@ button:active {
     transform: translateY(-1px);
 }
 
+/* Enhanced paragraph styling */
+p {
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #e8e8e8;
+    margin: 15px 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
 /* Result display styling */
 #result {
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    font-weight: 500;
     backdrop-filter: blur(10px);
     background: rgba(255, 255, 255, 0.1);
     border: 2px solid rgba(0, 255, 127, 0.4);
@@ -159,10 +185,10 @@ button:active {
     margin: 20px auto;
     text-align: center;
     font-size: 1.1rem;
-    font-weight: bold;
     max-width: 600px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
+    color: #f5f5f5;
 }
 
 #result:not(:empty) {
@@ -182,6 +208,10 @@ button:active {
         font-size: 2rem;
     }
     
+    h2 {
+        font-size: 1.3rem;
+    }
+    
     h3 {
         padding: 20px;
         font-size: 0.9rem;
@@ -194,6 +224,10 @@ button:active {
     
     pre {
         padding: 15px;
+    }
+    
+    p {
+        font-size: 1rem;
     }
 }
 
