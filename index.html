@@ -1,27 +1,38 @@
 <!DOCTYPE html>
-<html>
+
     <head>
         <title>Blackjack game</title>
-        <link rel="stylesheet" href="blackjack_game.css">
+        <link rel="stylesheet" href="blackjack.css">
     </head>
-    <pre>
-        <pre>                                               <h1>Blackjack: The Ultimate Luck Guesser</h1>
-            <pre><h2>Steps:</h2></pre>
-            <h3>•Press "try out your luck" to start the game<br>
-•The machine assigns you two random cards having values from 1 to 11                                
-                                                                                                                                                                                                                                                                                                            
-•If the sum of the cards:                                                                                                                                                
-    •is 21: Congrats! You've won blackjack. Collect the money💵                                     
-    •is less than 21: You still have one more shot to go🔥                                          
-    •is greater than 21: Better luck next time ☠️                                                   
-        </h3>
-
-                                                                    <button onclick="play_game()">try out your luck</button>
-                                                                    <p id="card1">Card 1 value will be shown here👉</p>
-                                                                    <p id="card2">Card 2 value will be shown here👉</p>
-                                                                    <p id="result">Wait for the results</p>
-        </pre>
-
-        <script src="blackjack_game.js"></script>
+     <p><pre>                                          <h1>     Welcome! <span id="username_el"></h1></span></pre></p> <!--displays username after asking for username via prompt()-->
+    <span id="money_el"></span> 
+    <p><pre>
+                                The Chinese considered 30 to be a number of cunning and strategy.
+                              Rooted in the ancient text The Thirty - Stratagems, it symbolizes 
+                             the wisdom of knowing when to strike, and when to retreat. In this game, 
+                            30 isn’t just a number — it’s your target, your challenge, your battlefield.
+                          Draw your cards wisely. Outsmart the odds. Can you reach 36 without going over?</pre>
+    </p>
+    <p><pre><h4>Rules:</h4>
+    <ul><li>Achieve a total of exactly 30 to win the game.</li>
+    <li>Exceeding a total of 30 results in an automatic loss.</li>
+    <li>If your total remains below 30, you may continue drawing cards in hopes of a 36.</li></ul></pre></p>
+    <button onclick="play_game()">Play Game</button><!--Start game button-->
+    <button onclick="new_card()">New Card</button><!--New card button-->
+    <p id="result">Press Play Game...</p>
+    <br>
+    
+    <pre><p id="og_card1_el">                                               Card 1:</p> <!--card1-->
+    <p id="og_card2_el">                                               Card 2:</p> <!--card2--></pre>
+    <pre><p id="all_cards">                                                Card History:</p></pre>
+    <pre><p id="name_el"></p> </pre>   <!--displays name and balance left-->
+    <pre><span id="checker_el"></span></pre>   <!--displays error if player is not alive and stops the game-->
+    <pre><p id="stats_el"></p></pre>
+    <script src="blackjack.js"></script>
     </body>
 </html>
+
+
+<!--mention in the website that the ace is number 1 in this game, and JQK are all being considered as the 10th value -->
+<!--so that makes up 1(A),2,3,4,5,6,7,8,9,10 and 10(J or Q or K)-->
+<!--but since there already exists a 10 numerical value and the JQK are also considered as 10, then it's best to assign the A as the 11th value in our game(see the ss) -->
